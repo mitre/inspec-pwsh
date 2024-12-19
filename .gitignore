@@ -1,3 +1,4 @@
+.DS_Store
 .envrc
 .ruby-version
 .ruby-gemset
@@ -23,5 +24,3 @@ vendor
 .bundle
 .rakeTaskscoverage/*
 coverage
-
-.DS_Store
