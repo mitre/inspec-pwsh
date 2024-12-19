@@ -2,7 +2,6 @@
 
 Gem::Specification.new do |spec|
   spec.name = 'inspec-pwsh'
-  spec.version = Train::Pwsh::VERSION
   spec.authors = ['Sujay Kandwal']
   spec.email = ['skandwal@mitre.org']
 
