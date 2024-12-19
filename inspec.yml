@@ -1,0 +1,10 @@
+name: inspec-pwsh
+title: Train Pwsh Resource Pack
+maintainer: saf@groups.mitre.org
+summary: This resource pack provides connectivity to the train-pwsh transport.
+copyright: The MITRE Corporation
+copyright_email: saf@groups.mitre.org
+version: 0.9
+license: Apache-2.0
+# lazy_instance support for FilterTable is available only from https://github.com/inspec/inspec/pull/5922 and v4.56.17
+inspec_version: '>= 4.56.17'

@@ -1,5 +1,3 @@
-source 'https://rubygems.org'
-
 gem 'cookstyle'
 gem 'highline'
 gem 'inspec', '>= 6.8.1'
@@ -16,4 +14,3 @@ gem 'rubocop-rake'
 gem 'ruby-pwsh'
 gem 'test-kitchen'
 gem 'train-pwsh', git: 'https://github.com/mitre/train-pwsh.git'
-gem 'inspec-pwsh', git: 'https://github.com/mitre/inspec-pwsh.git'
