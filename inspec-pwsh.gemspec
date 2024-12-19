@@ -2,6 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name = 'inspec-pwsh'
+  spec.version = '0.1.0'
   spec.authors = ['Sujay Kandwal']
   spec.email = ['skandwal@mitre.org']
 
