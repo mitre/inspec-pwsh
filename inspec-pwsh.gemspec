@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'lib/train-pwsh/version'
-
 Gem::Specification.new do |spec|
   spec.name = 'inspec-pwsh'
   spec.version = Train::Pwsh::VERSION
