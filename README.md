@@ -1,28 +1,68 @@
-# Pwsh Resource Pack
-This resource pack is meant for use with the train-pwsh transport for Inspec. Currently, there are 5 resources, each with different purposes. Below is a description for each of them.
+# InSpec for Pwsh
 
-# pwsh_exchange_executor Resource
-This resource maintains a connection to a Train session enables the user to run commands that pertain to Microsoft Exchange. This session has the Microsoft ExchangeOnlineManagement module both imported and installed. 
+* **Project State: Maintained**
 
-- The Exchange connection can be accessed using the ```run_script_in_exchange``` function
+For more information on project states and SLAs, see [this documentation](https://github.com/chef/chef-oss-practices/blob/master/repo-management/repo-states.md).
 
-# pwsh_graph_executor Resource
-This resource maintains a connection to a Train session enables the user to run commands that pertain to Microsoft Graph. This session has the Microsoft Graph module both imported and installed. 
+This InSpec resource pack uses the ruby-pwsh provides the required resources to write tests for profiles using Pwsh.
 
-- The Graph connection can be accessed using the ```run_script_in_graph``` function
+## Prerequisites
 
-# pwsh_teams_executor Resource
-This resource maintains a connection to a Train session enables the user to run commands that pertain to Microsoft Teams. This session has the Microsoft Teams module both imported and installed. 
+This resource pack requires the use of `train-pwsh`, which is a transport that is used to connect to a persistent powershell session. Please refer to the documentation of [train-pwsh](https://github.com/mitre/train-pwsh) to ensure the environment variables have been set there for this work.  
 
-- The Teams connection can be accessed using the ```run_script_in_teams``` function
+### Use the Resources
 
-# pwsh_pnp_executor Resource
-This resource maintains a connection to a Train session enables the user to run commands that pertain to Microsoft SharePoint (PnP). This session has the Microsoft PnP module both imported and installed. 
+Since this is an InSpec resource pack, it only defines InSpec resources. To use these resources in your controls, create your profile:
 
-- The PnP connection can be accessed using the ```run_script_in_pnp``` function
+#### Create a profile
 
-# pwsh_singe_session_executor Resource
-This resource manages two distinct sessions with Train. One session connects to Microsoft Graph and Exchange, while the other connects to Microsoft Teams and PnP. The reason for separating these modules into two different connections instead of placing them into one is that some of their dependencies conflict with each other. As a result, combining these modules would break functionality of Train.
+```bash
+inspec init profile my-profile
+```
+The above command generates a sample inspec.yml that depends on `master`.  We recommend this is pinned to a release of the resource pack as follows.
 
-- The Graph/Exchange connection can be accessed using the ```run_script_in_graph_exchange``` function
-- The Teams/PnP connection can be accessed using the ```run_script_in_teams_pnp``` function
+Example `inspec.yml`:
+
+```yaml
+name: my-profile
+title: My own Pwsh profile
+version: 0.1.0
+inspec_version: '>= 4.6.9'
+depends:
+ - name: inspec-pwsh
+   url: https://github.com/mitre/inspec-pwsh
+```
+
+(For available inspec-pwsh versions, see this list of [inspec-pwsh versions](https://github.com/inspec/inspec-pwsh/releases).)
+
+If a resource is in local, change the `url` to `path`.
+
+```yaml
+name: my-profile
+title: My own Pwsh profile
+version: 0.1.0
+inspec_version: '>= 4.6.9'
+depends:
+ - name: inspec-pwsh
+   path: ../my-profile
+```
+
+(For available inspec-pwsh versions, see this list of [inspec-pwsh versions](https://github.com/inspec/inspec-pwsh/releases).)
+
+Add some tests and run the profile via:
+
+```bash
+inspec exec my-profile -t pwsh://pwsh-options
+```
+
+## Resource documentation
+
+This resource pack allows the testing of the following Pwsh resources. If a resource you wish to test is not listed, please feel free to open an [Issue](https://github.com/inspec/inspec-pwsh/issues). As an open-source project, we also welcome public contributions via [Pull Request](https://github.com/inspec/inspec-pwsh/pulls).
+
+InSpec Supported Resources [https://docs.chef.io/inspec/resources/](https://docs.chef.io/inspec/resources/)
+
+## Examples 
+
+## Support
+
+The InSpec Pwsh resources are community-supported. For bugs and features, please open a GitHub issue and label it appropriately.
