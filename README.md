@@ -10,6 +10,8 @@ This InSpec resource pack uses the ruby-pwsh provides the required resources to 
 
 This resource pack requires the use of `train-pwsh`, which is a transport that is used to connect to a persistent powershell session. Please refer to the documentation of [train-pwsh](https://github.com/mitre/train-pwsh) to ensure the environment variables have been set there for this work.  
 
+More documentation about each resource in this resource pack can be accessed through the docs folder of the repo. Here is the link to it: [Docs](https://github.com/mitre/inspec-pwsh/tree/main/docs).
+
 ### Use the Resources
 
 Since this is an InSpec resource pack, it only defines InSpec resources. To use these resources in your controls, create your profile:
